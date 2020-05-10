@@ -5,13 +5,15 @@ pROPIEDADES
 vALORES
 */
 
+  
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin:0px;
-    
+
 }
 
-h1, 
+h1,
 h2,
 h3,
 h4,
@@ -56,6 +58,7 @@ h2{
     align-items: center;
     justify-content: space-between;
     /* el container hereda todo esto */
+    flex-wrap: wrap;
 }
 
 .hero_image{
@@ -68,35 +71,27 @@ h2{
     display: flex;
     justify-content: center;
     margin:0;
-    flex-wrap: wrap;
-    width: 1200px;
     margin:0 auto;
-    
-    
+    flex-wrap: wrap;
+
+
+
 }
 
 .project{
-    /*
-    border-top: 10px solid red;
-    border-right: 10px solid green;
-    border-left: 10px solid orange;
-    border-bottom: 10px solid pink;
-    
-    border-top-color: red;
-    border-width: 15px;
-    border-style: solid;
-    */
-    border: 1px solid #5b3924;
+    border: none;
     border-radius: 10px;
     margin-bottom: 15px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 230px;
+    width: 27%;
+    height: auto;
     align-items: center;
     justify-content: center;
     margin:10px;
+    flex-wrap: wrap;
+
 
 }
 
@@ -145,7 +140,7 @@ h2{
 
 .song_description{
     font-size: 20px;
-    
+
 }
 
 .project strong{
@@ -160,11 +155,16 @@ h2{
 }
 
 .song_details{
-   width: 300px; 
+   width: auto;
 }
 
 .album_imageContainer{
-    width: 100px;
+    width: auto;
+    text-align: center;
+}
+
+.album_imageContainer img{
+        width: 40%;
 }
 
 .header{
@@ -174,6 +174,7 @@ h2{
     align-items: center;
     justify-content: space-between;
     height: 90px;
+    flex-wrap: wrap;
 }
 
 
@@ -186,7 +187,6 @@ list-style: none;
 
 figure{
     margin: 0;
-    margin-left: 10px;
 }
 
 
@@ -221,7 +221,7 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .footer img{
@@ -235,6 +235,7 @@ figure{
 .event_list{
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .event-list-title{
@@ -242,8 +243,8 @@ figure{
 }
 
 .event{
-    margin: 10px;
-    width: 480px;
+    margin:10px auto;
+    width: 48%;
     flex-shrink: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -251,7 +252,7 @@ figure{
 }
 
 .event img{
-    width: 480px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
@@ -295,13 +296,19 @@ figure{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social{
+    display: flex;
+    align-items:center;
 }
 
 .social_link{
     display:inline-block;
     width: 50px;
     height: 50px;
-    margin: 0 10px;
+    margin-left: 10px;
     background-size: 50px 50px;
 }
 .social_link.twitter{
@@ -342,13 +349,14 @@ figure{
     margin-top:10px;
 }
 
-.form_email h3{ 
+.form_emFail h3{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container{
     /* border:1px solid red; */
-    width: 1000px;
+    max-width: 1000px;
+    flex: 1;
     margin: 0 auto;
     display: inherit;
     justify-content: inherit;
@@ -360,4 +368,251 @@ figure{
 
 .container h2{
     margin: 20px 0 0;
+}
+
+.html_video{
+    width: 100%;
+    height: auto;
+}
+
+.youtube-video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.youtube-container{
+    position: relative;
+    height:auto;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.burguer-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /*relativo al ancho*/
+    background-color: #2b5181;
+    display: none;
+    line-height: 40px;/*centrar de otra manera*/
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+    
+
+}
+
+/* Desktop first desde el mediaquerie mas grande */
+
+@media screen and (max-width: 1023px){
+    .container{
+        padding: 0 1em;
+    }
+
+    .hero{
+        height: auto;
+        position: relative;
+        overflow: hidden;/*me esconde lo que se desborda*/
+        padding: 2em;
+    }
+
+    .hero_image{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 2em;
+        z-index: 2;
+    }
+
+    .event{
+        width: 100%;
+        flex-shrink: initial;
+    }
+
+    .event_imageContainer{
+        width: 100%;
+    }
+
+    .event img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    .burguer-button{
+        display: block;
+    }
+
+    .header{
+        display: block;
+        height: auto;
+    }
+
+    .header ol{
+        display: initial;
+    }
+
+    .header ol li{
+        height: 50px;
+    }
+
+    .header a{
+        justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
+    }
+
+    .header .logo{
+        text-align: center;
+    }
+
+    .menu{
+        position: fixed;
+        background-color: rgba(87, 66, 34, .9);
+        z-index: 3;
+        top: 0;
+        left: -100vw;
+        bottom: 0; /*Hace que se estire y que su contendip se centre*/
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+    
+    }
+
+    .menu.is-active{
+        left: 0;
+    }
+
+    ol{
+        height: auto;
+    }
+
+
+    .song_details{
+        font-size: 16px;
+    }
+
+    .song_date, .song_url, .song_title{
+        margin: .4em 0;
+    }
+
+    .song_title{
+        font-size: 1.5em;
+    }
+
+    .song_date{
+        font-size: 1em;
+    }
+
+    .song_url{
+        font-size: 1em;
+    }
+
+    .song_description{
+        font-size: .8em;
+    }
+
+    .event{
+        width: 100%;
+        flex-shrink: initial;
+    }
+
+    .event img{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 428px){
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    .project{
+        width: 80%;
+    }
+
+    .event_details{
+        margin: -2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact{
+        height: auto;
+        padding: 1.5em 0;
+        display: block;
+        text-align: center;
+
+    }
+
+    .form_email button{
+        margin: 1em auto;
+    }
+
+    .form_email h3{
+        margin-top: 0;
+    }
+
+    .footer{
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+        /* evitar el margin collapsing */
+    }
+
+    .container h2{
+        text-align: center;
+    }
+
+    .social{
+        display: flex;
+        justify-content: center;
+    }
+
+
+}
+
+@media screen and (max-width: 320px){
+    .project{
+        width: 80%;
+    }
+
+    h1{
+        font-size: 1.2em;
+        
+    }
+
+    .hero{
+        padding: 2em 1em;
+    }
+
+    .event{
+        width: 80%;
+    }
+
+    .event_imageContainer{
+        width: 100%;
+    }
+
+    
 }
