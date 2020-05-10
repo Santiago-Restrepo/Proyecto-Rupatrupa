@@ -366,6 +366,7 @@ figure{
     border: inherit;
 }
 
+
 .container h2{
     margin: 20px 0 0;
 }
@@ -453,6 +454,10 @@ figure{
 }
 
 @media screen and (max-width: 767px){
+
+    .hero .container h1{
+        background-color: rgba(255, 223 , 186,.4);
+    }
 
     .burguer-button{
         display: block;
@@ -543,6 +548,8 @@ figure{
 }
 
 @media screen and (max-width: 428px){
+
+    
 
     h1{
         font-size: 1.5em;
